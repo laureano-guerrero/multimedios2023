@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Titul Principal</h1>
+    <h2>Subtitulos</h2>
+    <h3>Encabezados Pequeños</h3>
+    <h4>Pequeños</h4>
+    <h5>Poco usado</h5>
+
+    <!-- esto es un comentario lo comente con control + k + c -->
+
+    <table>
+        <td></td>
+
+        <td></td>
+    </table>
+
+    <p>Lorem, <span style="color: blue;">dolor sit amet</span>  consectetur adipisicing elit. 
+       Provident, maxime. Quibusdam deserunt omnis consequatur repellat numquam repudiandae perferendis. 
+    </p>
+    <!-- span es una etiqueta para dar un estilo a algo específico -->
+
+    <div>
+
+    </div>
+
+    <input type='text'>
+
+    <form action="">
+
+        <input type='text'>
+        <input type='text'>
+
+    </form>
+
+    <button>Hola</button>
+
+    <ul>
+        <li>+</li>
+        <li>+</li>
+    </ul>
+
+    <ol>
+        <li>+</li>
+        <li>+</li>
+    </ol>
+
+    <img src="img/text.png" alt="">
+</body>
+</html>
