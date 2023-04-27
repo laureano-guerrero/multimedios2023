@@ -97,7 +97,7 @@
     //declaración de variables
     var contenidoTablaResultado = document.querySelector('#resultados');
 
-    function CargarDatos() {
+    function CargarDatosCursos() {
       fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaCurso.php")
         .then((respuesta) => respuesta.json()) //pedimos datos con esta url y el then recibe los  datos
         .then((datosrespuesta) => { //transforma los datos
@@ -123,6 +123,6 @@
         }
     }
     
-    CargarDatos();
+    CargarDatosCursos();
   </script>
 </html>

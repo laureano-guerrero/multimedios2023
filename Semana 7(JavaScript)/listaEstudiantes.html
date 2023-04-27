@@ -18,60 +18,55 @@
     <!-- place navbar here -->
   </header>
   <main>
-    <div style="margin-bottom: 2%;">
-        <nav class="navbar navbar-expand navbar-light bg-info">
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" aria-current="page">Lista de Estudiantes <span class="visually-hidden">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Lista de Cursos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Lista de Profesores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Lista de Grupo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Lista de Usuarios</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="margin-bottom: 3%;">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Lista de Cursos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Lista de Estudiantes-Grupos</a>
-         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Lista de Profesores-Grupos</a>
-         </li>
-            </ul>
-        </nav>
+            <a class="nav-link" href="#">Lista de Estudiantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          
+        </ul>
       </div>
+    </nav>
         <h1>Lista de Estudiantes</h1>
 
     <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-striped able-hover table-borderless table-primary align-middle">
+
             <thead class="table-light">
                 <caption>Table Name</caption>
                 <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
+                    <th>ID</th>
+                    <th>Cédula</th>
+                    <th>Correo Electrónico</th>
+                    <th>Teléfono</th>
+                    <th>Teléfono Celular</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Sexo</th>
+                    <th>Dirreccion</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Nacionalidad</th>
+                    <th>IdCarrera</th>
+                    <th>Usuario</th>
                 </tr>
                 </thead>
-                <tbody class="table-group-divider">
-                    <tr class="table-primary" >
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                    </tr>
-                    <tr class="table-primary">
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                    </tr>
+
+                <tbody class="table-group-divider" id="resultados">
+                  <!-- la función llena la tabla -->
                 </tbody>
-                <tfoot>
-                    
-                </tfoot>
+                <tfoot></tfoot>
         </table>
     </div>
     
@@ -89,5 +84,49 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 </body>
+
+<script>
+
+  //declaración de variables para empezar a trabajar en javascript
+  var contenidoTablaResultado = document.querySelector('#resultados');
+
+  function CargarDatosEstudiantes() {
+    fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")
+      .then((respuesta) => respuesta.json()) //pedimos datos con esta url y el then recibe los  datos
+      .then((datosrespuesta) => { //transforma los datos
+        setTable(datosrespuesta.data) //lo envio a la función para darle tratamiento
+      })
+      .catch(console.log);
+  }
+
+  function setTable(datos){
+      console.log('datos', datos); //muestra en consola solamente, es como un JOptionPane
+
+      for (const valor of datos) {
+          console.log('valor:', valor);
+          contenidoTablaResultado.innerHTML += `
+
+          <tr class="table-light" >
+              <td scope="row">${valor.id}</td>
+              <td>${valor.cedula}</td>
+              <td>${valor.correoelectronico}</td>
+              <td>${valor.telefono}</td>
+              <td>${valor.telefonocelular}</td>
+              <td>${valor.fechanacimiento}</td>
+              <td>${valor.sexo}</td>
+              <td>${valor.direccion}</td>
+              <td>${valor.nombre}</td>
+              <td>${valor.apellidopaterno}</td>
+              <td>${valor.apellidomaterno}</td>
+              <td>${valor.nacionalidad}</td>
+              <td>${valor.idCarreras}</td>
+              <td>${valor.usuario}</td>
+            </tr> `;
+          
+      }
+  }
+  
+  CargarDatosEstudiantes();
+</script>
 
 </html>
