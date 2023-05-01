@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Listar</title>
+    <title>Lista de Cursos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -19,39 +19,37 @@
   </head>
 
   <body>
-    <div class="container-fluid">
       <header>
-        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="img/home.png" style="padding-left: 15%; width: 30%; height: 30%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item dropdown ">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                    Listas
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Lista</a></li>
+                    <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                    
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </header>
       <main>
-        <div style="margin-bottom: 2%;">
-        <nav class="navbar navbar-expand navbar-light bg-info">
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" aria-current="page">Lista de Cursos <span class="visually-hidden">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Lista de Estudiantes</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Lista de Profesores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Lista de Grupo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Lista de Usuarios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lista de Estudiantes-Grupos</a>
-         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Lista de Profesores-Grupos</a>
-         </li>
-            </ul>
-        </nav>
-      </div>
-        <h1>Lista de Cursos</h1>
+        
+        <h2>Lista de Cursos</h2>
         <div class="table-responsive">
           <table
             class="table table-striped table-hover table-borderless table-primary align-middle"
