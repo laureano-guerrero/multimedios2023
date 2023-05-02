@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Lista de Estudiantes</title>
+  <title>Lista de Profesores-Grupos</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +15,7 @@
 
 <body>
   <header>
+    <!-- place navbar here -->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -48,39 +49,6 @@
     </nav>
   </header>
   <main>
-    
-        <h2>Lista de Estudiantes</h2>
-
-    <div class="table-responsive">
-        <table class="table table-striped able-hover table-borderless table-primary align-middle">
-
-            <thead class="table-light">
-                <caption>Table Name</caption>
-                <tr>
-                    <th>ID</th>
-                    <th>Cédula</th>
-                    <th>Correo Electrónico</th>
-                    <th>Teléfono</th>
-                    <th>Teléfono Celular</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Sexo</th>
-                    <th>Dirreccion</th>
-                    <th>Nombre</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
-                    <th>Nacionalidad</th>
-                    <th>IdCarrera</th>
-                    <th>Usuario</th>
-                </tr>
-                </thead>
-
-                <tbody class="table-group-divider" id="resultados">
-                  <!-- la función llena la tabla -->
-                </tbody>
-                <tfoot></tfoot>
-        </table>
-    </div>
-    
 
   </main>
   <footer>
@@ -95,49 +63,5 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 </body>
-
-<script>
-
-  //declaración de variables para empezar a trabajar en javascript
-  var contenidoTablaResultado = document.querySelector('#resultados');
-
-  function CargarDatosEstudiantes() {
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")
-      .then((respuesta) => respuesta.json()) //pedimos datos con esta url y el then recibe los  datos
-      .then((datosrespuesta) => { //transforma los datos
-        setTable(datosrespuesta.data) //lo envio a la función para darle tratamiento
-      })
-      .catch(console.log);
-  }
-
-  function setTable(datos){
-      console.log('datos', datos); //muestra en consola solamente, es como un JOptionPane
-
-      for (const valor of datos) {
-          console.log('valor:', valor);
-          contenidoTablaResultado.innerHTML += `
-
-          <tr class="table-light" >
-              <td scope="row">${valor.id}</td>
-              <td>${valor.cedula}</td>
-              <td>${valor.correoelectronico}</td>
-              <td>${valor.telefono}</td>
-              <td>${valor.telefonocelular}</td>
-              <td>${valor.fechanacimiento}</td>
-              <td>${valor.sexo}</td>
-              <td>${valor.direccion}</td>
-              <td>${valor.nombre}</td>
-              <td>${valor.apellidopaterno}</td>
-              <td>${valor.apellidomaterno}</td>
-              <td>${valor.nacionalidad}</td>
-              <td>${valor.idCarreras}</td>
-              <td>${valor.usuario}</td>
-            </tr> `;
-          
-      }
-  }
-  
-  CargarDatosEstudiantes();
-</script>
 
 </html>
