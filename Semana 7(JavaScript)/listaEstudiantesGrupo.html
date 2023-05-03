@@ -106,7 +106,7 @@
  //variable contenidoTablaResultado
 
  function CargarDatosEstudiantesGrupo(){
-  fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")
+  fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantesGrupo.php")
   .then((respuesta) => respuesta.json())
   .then((datosrespuesta) => { 
         setTable(datosrespuesta.data) //lo envio a la función para darle tratamiento

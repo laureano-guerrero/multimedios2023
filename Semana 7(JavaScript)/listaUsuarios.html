@@ -49,6 +49,28 @@
     </nav>
   </header>
   <main>
+    <h2>Lista de Usuarios</h2>
+        <div class="table-responsive">
+          <table
+            class="table table-striped table-hover table-borderless table-primary align-middle"
+          >
+            <thead class="table-light">
+              <caption>
+                Lista de Usuarios
+              </caption>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Contraseña</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider" id="resultados">
+              <!-- la función llena la tabla -->
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
 
   </main>
   <footer>
@@ -63,5 +85,39 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 </body>
+
+<script>
+  var contenidoTablaResultado = document.querySelector('#resultados');
+
+  function CargarDatosUsuarios(){
+  fetch('https://paginas-web-cr.com/ApiPHP/apis/ListaUsuarios.php')
+  .then((respuesta)=>respuesta.json())
+  .then((datosRespuesta)=>{
+    setTable(datosRespuesta.data)
+   
+  })
+  .catch(console.log);
+}
+
+function setTable(datos){
+console.log('datos',datos);
+
+  for (const valor of datos) {
+    console.log('valor:', valor);
+    contenidoTablaResultado.innerHTML += `
+    <tr class="table-light" >
+      <td scope="row">${valor.id}</td>
+      <td>${valor.name}</td>
+      <td>${valor.email}</td>
+      <td>${valor.password}</td>
+
+    </tr> `;
+    
+  }
+
+}
+
+CargarDatosUsuarios();
+</script>
 
 </html>
