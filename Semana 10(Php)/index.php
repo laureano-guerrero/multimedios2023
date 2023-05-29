@@ -4,6 +4,17 @@
   $nombrepagina = 'Clase PhP';
   ?>
 
+<?php
+  //include 'menu.php';
+  //include 'footer.php';
+
+  require 'plantilla.php';
+
+  $plantilla = new plantilla();
+
+  //require es para cosas que son necesarias, sin embargo no afecta la lógica, como imagenes o algo similar
+  ?>
+
 
 <head>
   <title>PHP</title>
@@ -19,22 +30,17 @@
 <body>
   <header>
     <!-- place navbar here -->
+    <?php
+    echo $plantilla->getMenu();
+    ?>
   </header>
   <main>
 <!-- En PHP podemos crecar variables desde arriba del documento, y nada más llamarlas abajo-->
     <?php 
-    
-    $titulo = "<h2>" .$nombrepagina. "</h2>";  //Aquí estamos concatenando la variable 
     $titulo = "<h2>$nombrepagina</h2>"; //Aquí no lo concatenamos pero aún así funciona
     echo $titulo; 
 
-    $menu = 
-    '<nav class="nav justify-content-center">
-      <a class="nav-link" href="#">Active link</a>
-      <a class="nav-link" href="#">Link</a>
-    </nav>';
 
-    echo $menu;
 
     echo '<div class="table-responsive">
       <table class="table table-striped
@@ -74,6 +80,7 @@
   </main>
   <footer>
     <!-- place footer here -->
+    <?php echo $plantilla->getfooter();?>;
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
