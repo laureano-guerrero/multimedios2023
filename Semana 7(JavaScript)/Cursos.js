@@ -43,6 +43,7 @@ function CargarDatosCursos() {
 
 var formulario = document.getElementById('formulario');
 
+
 formulario.addEventListener('submit', function(e) {
   e.preventDefault();
    alert('salvando');
@@ -72,6 +73,8 @@ formulario.addEventListener('submit', function(e) {
     .catch(console.log)//muestra errores
 });
 
+
+
  //Se obtienen las variables y se igualan, se jalan los datos de la lista
  function editar(id, nombre, descripcion, tiempo){
     myModal.show();
@@ -79,7 +82,11 @@ formulario.addEventListener('submit', function(e) {
     document.getElementById('descripcion').value = descripcion;
     document.getElementById('tiempo').value = tiempo;
     document.getElementById('id').value = id;
+   
   }
+
+ 
+  
 ////////////////////////////////////FIN DEL EDITAR
 
 
