@@ -68,6 +68,7 @@
                     <th>Nacionalidad</th>
                     <th>IdCarrera</th>
                     <th>Usuario</th>
+                    <th>Acciones</th>
                 </tr>
                 </thead>
 
@@ -83,6 +84,109 @@
   <footer>
     <!-- place footer here -->
   </footer>
+
+  
+  <!-- Modal trigger button -->
+      <button hidden type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+        Este modal funciona para llamarlo más adelante, así funciona en boostrap
+      </button>
+  <!-- Modal Body -->
+      <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitleId">Editar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formulario">
+                <div class="mb-3">
+                  <input type="hidden" id="id" name="id">
+                  <label for="" class="form-label">Cédula</label>
+                  <input type="text"
+                    class="form-control" name="cedula" id="cedula" aria-describedby="helpId" placeholder="Cédula del estudiante">
+                  <small id="helpId" class="form-text text-muted">Ingresa la cédula del estudiante</small>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Correo Electrónico</label>
+                    <input type="email"
+                      class="form-control" name="correo" id="correo" aria-describedby="helpId" placeholder="Correo electrónico">
+                    <small id="helpId" class="form-text text-muted">Ingresa el correo electrónico del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Teléfono</label>
+                    <input type="text"
+                      class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Teléfono del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el teléfono del estudiante</small>
+                  </div>  
+                  <div class="mb-3">
+                    <label for="" class="form-label">Celular</label>
+                    <input type="text"
+                      class="form-control" name="celular" id="celular" aria-describedby="helpId" placeholder="Celular del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el celular del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date"
+                      class="form-control" name="fechaNacimiento" id="fechaNacimiento" aria-describedby="helpId" placeholder="Fecha de nacimiento del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa la fecha de nacimiento del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Sexo</label>
+                    <input type="text"
+                      class="form-control" name="sexo" id="sexo" aria-describedby="helpId" placeholder="Sexo del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el sexo del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Dirección</label>
+                    <input type="text"
+                      class="form-control" name="direccion" id="direccion" aria-describedby="helpId" placeholder="Dirección del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa la dirección del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text"
+                      class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el nombre del estudiante</small>
+                  </div> 
+                  <div class="mb-3">
+                    <label for="" class="form-label">Apellido Paterno</label>
+                    <input type="text"
+                      class="form-control" name="apellidoPaterno" id="apellidoPaterno" aria-describedby="helpId" placeholder="Apellido paterno del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el apellido paterno del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Apellido Materno</label>
+                    <input type="text"
+                      class="form-control" name="apellidoMaterno" id="apellidoMaterno" aria-describedby="helpId" placeholder="Apellido materno del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el apellido materno del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Nacionalidad</label>
+                    <input type="text"
+                      class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId" placeholder="Nacionalidad del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa la nacionalidad del estudiante</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Id de carrera</label>
+                    <input type="number"
+                      class="form-control" name="idCarreras" id="idCarreras" aria-describedby="helpId" placeholder="Carrera del estudiante">
+                    <small id="helpId" class="form-text text-muted">Ingresa el código de carrera del estudiante</small>
+                  </div>                
+                  <div class="mb-3">
+                    <button type="reset" class="btn btn-danger">Vaciar Campos</button>
+                    <button type="submit" class="btn btn-primary">Editar</button>
+      
+                  </div>                         
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -91,50 +195,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
+  <script src="Estudiantes.js"></script>
 </body>
 
-<script>
-
-  //declaración de variables para empezar a trabajar en javascript
-  var contenidoTablaResultado = document.querySelector('#resultados');
-
-  function CargarDatosEstudiantes() {
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")
-      .then((respuesta) => respuesta.json()) //pedimos datos con esta url y el then recibe los  datos
-      .then((datosrespuesta) => { //transforma los datos
-        setTable(datosrespuesta.data) //lo envio a la función para darle tratamiento
-      })
-      .catch(console.log);
-  }
-
-  function setTable(datos){
-      console.log('datos', datos); //muestra en consola solamente, es como un JOptionPane
-
-      for (const valor of datos) {
-          console.log('valor:', valor);
-          contenidoTablaResultado.innerHTML += `
-
-          <tr class="table-light" >
-              <td scope="row">${valor.id}</td>
-              <td>${valor.cedula}</td>
-              <td>${valor.correoelectronico}</td>
-              <td>${valor.telefono}</td>
-              <td>${valor.telefonocelular}</td>
-              <td>${valor.fechanacimiento}</td>
-              <td>${valor.sexo}</td>
-              <td>${valor.direccion}</td>
-              <td>${valor.nombre}</td>
-              <td>${valor.apellidopaterno}</td>
-              <td>${valor.apellidomaterno}</td>
-              <td>${valor.nacionalidad}</td>
-              <td>${valor.idCarreras}</td>
-              <td>${valor.usuario}</td>
-            </tr> `;
-          
-      }
-  }
-  
-  CargarDatosEstudiantes();
-</script>
 
 </html>
