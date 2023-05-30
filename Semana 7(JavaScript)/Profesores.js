@@ -136,3 +136,33 @@ var contenidoTablaResultado = document.querySelector('#resultados');
 
 
   //////////////FIN DEL EDITAR
+
+  /////////////INICIO DEL ELIMINAR
+
+function eliminar(id){
+    alert('Se eliminará el profesor con el código '+id);
+    var datosenviar = {
+          id: id
+      }
+
+     
+      fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarProfesores.php",
+      {
+          method:"POST",
+          body:JSON.stringify(datosenviar)
+      })//url de peticion de datos
+      .then(respuesta => respuesta.json())//recibe los datos en formato json
+      .then((datosrepuesta) => {      
+          if (datosrepuesta.data==true) {
+            alert('El profesor con el código '+id+' fue eliminado correctamente');
+          } else {
+            alert('El profesor con el código '+id+' no fue eliminado correctamente');
+          }
+          window.location = 'listaProfesores.html'  
+      })
+      .catch(console.log)//muestra errores
+  }
+
+
+
+ ///////////////FIN DEL ELIMINAR
