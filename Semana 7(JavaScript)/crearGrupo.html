@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Lista de Grupos</title>
+  <title>Crear Grupo</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
@@ -59,74 +60,26 @@
     </nav>
   </header>
   <main>
-
-    <h2>Lista de Grupos</h2>
-    <div class="table-responsive">
-      <table
-        class="table table-striped table-hover table-borderless table-primary align-middle"
-      >
-        <thead class="table-light">
-          <caption>
-            Lista de Grupos
-          </caption>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Acciones</th>
-            
-
-          </tr>
-        </thead>
-        <tbody class="table-group-divider" id="resultados">
-          <!-- la función llena la tabla -->
-        </tbody>
-        <tfoot></tfoot>
-      </table>
-    </div>
-
+    
+  <div class="m-2">
+    <form id="formulario">
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input type="text"
+            class="form-control" name="nombre" id="nombre" required aria-describedby="helpId" placeholder="Ingresa el nombre del curso">
+          <small id="helpId" class="form-text text-muted">Ingresa el nombre del curso</small>
+        </div>
+        <div class="mb-3">
+            <button type="reset" class="btn btn-danger">Limpiar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+    </form>
+  </div>
 
   </main>
   <footer>
     <!-- place footer here -->
   </footer>
-
-  <!-- Modal trigger button -->
-  <button hidden type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
-    Este modal funciona para llamarlo más adelante, así funciona en boostrap
-  </button>
-
-  <!-- Modal Body -->
-<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTitleId">Editar</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="formulario">
-          <div class="mb-3">
-            <input type="hidden" id="id" name="id">
-            <label for="" class="form-label">Nombre</label>
-            <input type="text"
-              class="form-control" name="nombre" id="nombre" required aria-describedby="helpId" placeholder="Nombre del curso">
-            <small id="helpId" class="form-text text-muted">Ingresa el nombre del grupo</small>
-          </div>
-          
-                   
-            <div class="mb-3">
-              <button type="reset" class="btn btn-danger">Vaciar Campos</button>
-              <button type="submit" class="btn btn-primary">Editar</button>
-            </div>                         
-      </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -137,8 +90,11 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <script src="Grupos.js"></script>
-</body>
+  <script src="AgregarGrupo.js"></script>
 
+
+
+
+</body>
 
 </html>

@@ -1,5 +1,6 @@
 //////////CONSULTAR 
 var contenidoTablaResultado = document.querySelector('#resultados');
+var contenidoSelectResultado = document.querySelector('#idCarreras')
 
   function CargarDatosEstudiantes() {
     fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")
@@ -110,8 +111,8 @@ var contenidoTablaResultado = document.querySelector('#resultados');
  //Se obtienen las variables y se igualan, se jalan los datos de la lista
  const myModal = new bootstrap.Modal(document.getElementById('modalId'));
  function editar(id,cedula,correo,telefono,celular,fechaNacimiento,sexo,direccion,nombre,apellidoPaterno,
-    apellidoMaterno,nacionalidad,idCarreras){
-    
+    apellidoMaterno,nacionalidad){
+    //falta el id carreras, lo borré para la prueba
     myModal.show();
     document.getElementById('cedula').value = cedula;
     document.getElementById('correo').value = correo;
@@ -124,7 +125,7 @@ var contenidoTablaResultado = document.querySelector('#resultados');
     document.getElementById('apellidoPaterno').value = apellidoPaterno;
     document.getElementById('apellidoMaterno').value = apellidoMaterno;
     document.getElementById('nacionalidad').value = nacionalidad;
-    document.getElementById('idCarreras').value = idCarreras;
+    //document.getElementById('idCarreras').value = idCarreras;
     document.getElementById('id').value = id;
   }
 
@@ -158,7 +159,34 @@ function eliminar(id){
       })
       .catch(console.log)//muestra errores
   }
-
-
-
  ///////////////FIN DEL ELIMINAR
+
+
+
+ //////////////CARGAR SELECT
+
+ function cargaDatosSelect(){
+  fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")
+  .then((respuesta) => respuesta.json()) //pedimos datos con esta url y el then recibe los  datos
+  .then((datosrespuesta) => { //transforma los datos
+    setSelect(datosrespuesta.data) //lo envio a la función para darle tratamiento
+  })
+  .catch(console.log);
+ }
+
+ function setSelect(datos){
+  console.log('datos', datos);
+
+  for (const valor of datos) {
+    console.log('valor:', valor);
+
+    contenidoSelectResultado.innerHTML+= `
+    <option value="${valor.id}">${valor.nombre} - ${valor.id} </option>
+    `
+  }
+
+ }
+ cargaDatosSelect();
+
+
+ ////////////FIN DEL CARGAR SELECT

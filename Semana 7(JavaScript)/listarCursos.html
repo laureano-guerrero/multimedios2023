@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                <li class="nav-item dropdown ">
+                <li class="nav-item dropdown ps-2">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">
                     Listas
@@ -41,6 +41,19 @@
                     <li><a class="dropdown-item" href="listaEstudiantes.html">Lista de Estudiantes</a></li>
                     <li><a class="dropdown-item" href="listaProfesores.html">Lista de Profesores</a></li>
                     <li><a class="dropdown-item" href="listaGrupos.html">Lista de Grupos</a></li>
+                    
+                  </ul>
+                </li>
+                <li class="nav-item dropdown ps-2">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                    Agregar
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="crearCurso.html">Agregar Cursos</a></li>
+                    <li><a class="dropdown-item" href="crearEstudiante.html">Agregar Estudiantes</a></li>
+                    <li><a class="dropdown-item" href="crearProfesor.html">Agregar Profesores</a></li>
+                    <li><a class="dropdown-item" href="crearGrupo.html">Agregar Grupos</a></li>
                     
                   </ul>
                 </li>
@@ -98,19 +111,19 @@
             <input type="hidden" id="id" name="id">
             <label for="" class="form-label">Nombre</label>
             <input type="text"
-              class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del curso">
+              class="form-control" name="nombre" id="nombre" required aria-describedby="helpId" placeholder="Nombre del curso">
             <small id="helpId" class="form-text text-muted">Ingresa el nombre del curso</small>
           </div>
           <div class="mb-3">
               <label for="" class="form-label">Descripcion</label>
               <input type="text"
-                class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Descripcion del curso">
+                class="form-control" name="descripcion" id="descripcion" required aria-describedby="helpId" placeholder="Descripcion del curso">
               <small id="helpId" class="form-text text-muted">Ingresa la Descripcion del curso</small>
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Tiempo</label>
               <input type="text"
-                class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="Tiempo del curso">
+                class="form-control" name="tiempo" id="tiempo" required aria-describedby="helpId" placeholder="Tiempo del curso">
               <small id="helpId" class="form-text text-muted">Ingresa el Tiempo del curso</small>
             </div>         
             <div class="mb-3">

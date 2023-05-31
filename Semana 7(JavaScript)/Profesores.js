@@ -1,5 +1,6 @@
 //////////CONSULTAR 
 var contenidoTablaResultado = document.querySelector('#resultados');
+var contenidoSelectResultado = document.querySelector('#idCarreras')
 
   function CargarDatosProfesores() {
     fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaProfesores.php")
@@ -127,7 +128,7 @@ var contenidoTablaResultado = document.querySelector('#resultados');
     document.getElementById('nombre').value = nombre;
     document.getElementById('apellidopaterno').value = apellidopaterno;
     document.getElementById('apellidomaterno').value = apellidomaterno;
-    document.getElementById('idCarreras').value = idCarreras;
+    
     document.getElementById('nacionalidad').value = nacionalidad;
     
     document.getElementById('id').value = id;
@@ -166,3 +167,32 @@ function eliminar(id){
 
 
  ///////////////FIN DEL ELIMINAR
+
+
+ //////////////CARGAR SELECT
+
+ function cargaDatosSelect(){
+  fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")
+  .then((respuesta) => respuesta.json()) //pedimos datos con esta url y el then recibe los  datos
+  .then((datosrespuesta) => { //transforma los datos
+    setSelect(datosrespuesta.data) //lo envio a la función para darle tratamiento
+  })
+  .catch(console.log);
+ }
+
+ function setSelect(datos){
+  console.log('datos', datos);
+
+  for (const valor of datos) {
+    console.log('valor:', valor);
+
+    contenidoSelectResultado.innerHTML+= `
+    <option value="${valor.id}">${valor.nombre} - ${valor.id} </option>
+    `
+  }
+
+ }
+ cargaDatosSelect();
+
+
+ ////////////FIN DEL CARGAR SELECT

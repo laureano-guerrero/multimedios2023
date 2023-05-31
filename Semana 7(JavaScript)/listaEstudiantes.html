@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-            <li class="nav-item dropdown ">
+            <li class="nav-item dropdown ps-2">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
                 Listas
@@ -39,10 +39,24 @@
                 
               </ul>
             </li>
+            <li class="nav-item dropdown ps-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                Agregar
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="crearCurso.html">Agregar Cursos</a></li>
+                <li><a class="dropdown-item" href="crearEstudiante.html">Agregar Estudiantes</a></li>
+                <li><a class="dropdown-item" href="crearProfesor.html">Agregar Profesores</a></li>
+                <li><a class="dropdown-item" href="crearGrupo.html">Agregar Grupos</a></li>
+                
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+   
   </header>
   <main>
     
@@ -104,75 +118,75 @@
                   <input type="hidden" id="id" name="id">
                   <label for="" class="form-label">Cédula</label>
                   <input type="text"
-                    class="form-control" name="cedula" id="cedula" aria-describedby="helpId" placeholder="Cédula del estudiante">
+                    class="form-control" name="cedula" id="cedula" required aria-describedby="helpId" placeholder="Cédula del estudiante">
                   <small id="helpId" class="form-text text-muted">Ingresa la cédula del estudiante</small>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Correo Electrónico</label>
                     <input type="email"
-                      class="form-control" name="correo" id="correo" aria-describedby="helpId" placeholder="Correo electrónico">
+                      class="form-control" name="correo" id="correo" required aria-describedby="helpId" placeholder="Correo electrónico">
                     <small id="helpId" class="form-text text-muted">Ingresa el correo electrónico del estudiante</small>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Teléfono</label>
                     <input type="text"
-                      class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Teléfono del estudiante">
+                      class="form-control" name="telefono" id="telefono" required aria-describedby="helpId" placeholder="Teléfono del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa el teléfono del estudiante</small>
                   </div>  
                   <div class="mb-3">
                     <label for="" class="form-label">Celular</label>
                     <input type="text"
-                      class="form-control" name="celular" id="celular" aria-describedby="helpId" placeholder="Celular del estudiante">
+                      class="form-control" name="celular" id="celular" required aria-describedby="helpId" placeholder="Celular del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa el celular del estudiante</small>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Fecha de Nacimiento</label>
                     <input type="date"
-                      class="form-control" name="fechaNacimiento" id="fechaNacimiento" aria-describedby="helpId" placeholder="Fecha de nacimiento del estudiante">
+                      class="form-control" name="fechaNacimiento" id="fechaNacimiento" required aria-describedby="helpId" placeholder="Fecha de nacimiento del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa la fecha de nacimiento del estudiante</small>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Sexo</label>
                     <input type="text"
-                      class="form-control" name="sexo" id="sexo" aria-describedby="helpId" placeholder="Sexo del estudiante">
+                      class="form-control" name="sexo" id="sexo" required aria-describedby="helpId" placeholder="Sexo del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa el sexo del estudiante</small>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Dirección</label>
                     <input type="text"
-                      class="form-control" name="direccion" id="direccion" aria-describedby="helpId" placeholder="Dirección del estudiante">
+                      class="form-control" name="direccion" id="direccion" required aria-describedby="helpId" placeholder="Dirección del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa la dirección del estudiante</small>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Nombre</label>
                     <input type="text"
-                      class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del estudiante">
+                      class="form-control" name="nombre" id="nombre" required aria-describedby="helpId" placeholder="Nombre del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa el nombre del estudiante</small>
                   </div> 
                   <div class="mb-3">
                     <label for="" class="form-label">Apellido Paterno</label>
                     <input type="text"
-                      class="form-control" name="apellidoPaterno" id="apellidoPaterno" aria-describedby="helpId" placeholder="Apellido paterno del estudiante">
+                      class="form-control" name="apellidoPaterno" id="apellidoPaterno" required aria-describedby="helpId" placeholder="Apellido paterno del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa el apellido paterno del estudiante</small>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Apellido Materno</label>
                     <input type="text"
-                      class="form-control" name="apellidoMaterno" id="apellidoMaterno" aria-describedby="helpId" placeholder="Apellido materno del estudiante">
+                      class="form-control" name="apellidoMaterno" id="apellidoMaterno" required aria-describedby="helpId" placeholder="Apellido materno del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa el apellido materno del estudiante</small>
                   </div>
                   <div class="mb-3">
                     <label for="" class="form-label">Nacionalidad</label>
                     <input type="text"
-                      class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId" placeholder="Nacionalidad del estudiante">
+                      class="form-control" name="nacionalidad" id="nacionalidad" required aria-describedby="helpId" placeholder="Nacionalidad del estudiante">
                     <small id="helpId" class="form-text text-muted">Ingresa la nacionalidad del estudiante</small>
                   </div>
                   <div class="mb-3">
-                    <label for="" class="form-label">Id de carrera</label>
-                    <input type="number"
-                      class="form-control" name="idCarreras" id="idCarreras" aria-describedby="helpId" placeholder="Carrera del estudiante">
-                    <small id="helpId" class="form-text text-muted">Ingresa el código de carrera del estudiante</small>
-                  </div>                
+                      <select class="form-select form-control" name="idCarreras" id="idCarreras" required aria-describedby="helpId" placeholder=""" aria-label="Default select example">
+                        <option selected disabled>Seleccione el id de Carrera</option>
+                      </select>
+                  </div> 
+                               
                   <div class="mb-3">
                     <button type="reset" class="btn btn-danger">Vaciar Campos</button>
                     <button type="submit" class="btn btn-primary">Editar</button>

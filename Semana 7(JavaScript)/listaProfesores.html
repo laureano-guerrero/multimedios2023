@@ -16,36 +16,47 @@
 <body>
   <header>
     <!-- place navbar here -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="margin-bottom: 3%;">
-        <div style="width: 15%;">
-          <a class="navbar-brand" href="#">
-          <img src="img/home.png" style="padding-left: 15%; width: 40%; height: 40%;">
-          </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/home.png" style="padding-left: 15%; width: 30%; height: 30%;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-  
-           <div class="dropdown open">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                  Listas
-                </button>
-            <div class="dropdown-menu" aria-labelledby="triggerId">
-              <a class="dropdown-item" href="listarCursos.html">Lista de Cursos</a>
-              <a class="dropdown-item" href="listaEstudiantes.html">Lista de Estudiantes</a>
-              <a class="dropdown-item" href="listaProfesores.html">Lista de Profesores</a>
-              <a class="dropdown-item" href="listaGrupos.html">Lista de Grupos</a>
-             
-            </div>
-           </div>
-            
-            
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item dropdown ps-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                Listas
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="listarCursos.html">Lista de Cursos</a></li>
+                <li><a class="dropdown-item" href="listaEstudiantes.html">Lista de Estudiantes</a></li>
+                <li><a class="dropdown-item" href="listaProfesores.html">Lista de Profesores</a></li>
+                <li><a class="dropdown-item" href="listaGrupos.html">Lista de Grupos</a></li>
+                
+              </ul>
+            </li>
+            <li class="nav-item dropdown ps-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                Agregar
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="crearCurso.html">Agregar Cursos</a></li>
+                <li><a class="dropdown-item" href="crearEstudiante.html">Agregar Estudiantes</a></li>
+                <li><a class="dropdown-item" href="crearProfesor.html">Agregar Profesores</a></li>
+                <li><a class="dropdown-item" href="crearGrupo.html">Agregar Grupos</a></li>
+                
+              </ul>
+            </li>
           </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
   <main>
 
@@ -106,73 +117,72 @@
             <input type="hidden" id="id" name="id">
             <label for="" class="form-label">Cédula</label>
             <input type="text"
-              class="form-control" name="cedula" id="cedula" aria-describedby="helpId" placeholder="Cédula del profesor">
+              class="form-control" name="cedula" id="cedula" required aria-describedby="helpId" placeholder="Cédula del profesor">
             <small id="helpId" class="form-text text-muted">Ingresa la cédula del profesor</small>
           </div>
           <div class="mb-3">
               <label for="" class="form-label">Correo Electrónico</label>
               <input type="text"
-                class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId" placeholder="Correo electrónico del profesor">
+                class="form-control" name="correoelectronico" id="correoelectronico" required aria-describedby="helpId" placeholder="Correo electrónico del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa el correo electrónico del profesor</small>
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Teléfono</label>
               <input type="text"
-                class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Teléfono del profesor">
+                class="form-control" name="telefono" id="telefono" required aria-describedby="helpId" placeholder="Teléfono del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa el teléfono del profesor</small>
             </div>  
             <div class="mb-3">
               <label for="" class="form-label">Teléfono Celular</label>
               <input type="text"
-                class="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId" placeholder="Teléfono celular del profesor">
+                class="form-control" name="telefonocelular" id="telefonocelular" required aria-describedby="helpId" placeholder="Teléfono celular del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa el teléfono celular del profesor</small>
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Fecha de nacimiento</label>
               <input type="date"
-                class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Fecha de nacimiento del profesor">
+                class="form-control" name="fechanacimiento" id="fechanacimiento" required aria-describedby="helpId" placeholder="Fecha de nacimiento del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa la fecha de nacimiento del profesor</small>
             </div> 
             <div class="mb-3">
               <label for="" class="form-label">Sexo</label>
               <input type="text"
-                class="form-control" name="sexo" id="sexo" aria-describedby="helpId" placeholder="Sexo del profesor">
+                class="form-control" name="sexo" id="sexo" required aria-describedby="helpId" placeholder="Sexo del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa el sexo del profesor</small>
             </div> 
             <div class="mb-3">
               <label for="" class="form-label">Dirección</label>
               <input type="text"
-                class="form-control" name="direccion" id="direccion" aria-describedby="helpId" placeholder="Direccion del profesor">
+                class="form-control" name="direccion" id="direccion" required aria-describedby="helpId" placeholder="Direccion del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa la dirección del profesor</small>
             </div> 
             <div class="mb-3">
               <label for="" class="form-label">Nombre</label>
               <input type="text"
-                class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del profesor">
+                class="form-control" name="nombre" id="nombre" required aria-describedby="helpId" placeholder="Nombre del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa el nombre del profesor</small>
             </div> 
             <div class="mb-3">
               <label for="" class="form-label">Apellido Paterno</label>
               <input type="text"
-                class="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId" placeholder="Apellido paterno del profesor">
+                class="form-control" name="apellidopaterno" id="apellidopaterno" required aria-describedby="helpId" placeholder="Apellido paterno del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa el apellido paterno del profesor</small>
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Apellido Materno</label>
               <input type="text"
-                class="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId" placeholder="Apellido materno del profesor">
+                class="form-control" name="apellidomaterno" id="apellidomaterno" required aria-describedby="helpId" placeholder="Apellido materno del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa el apellido materno del profesor</small>
             </div> 
             <div class="mb-3">
-              <label for="" class="form-label">Id Carrera</label>
-              <input type="text"
-                class="form-control" name="idCarreras" id="idCarreras" aria-describedby="helpId" placeholder="Código de la carrera del profesor">
-              <small id="helpId" class="form-text text-muted">Ingresa el código de la carrera del profesor</small>
-            </div>   
+              <select class="form-select form-control" name="idCarreras" id="idCarreras" required aria-describedby="helpId" placeholder=""" aria-label="Default select example">
+                <option selected disabled>Seleccione el id de Carrera</option>
+              </select>
+          </div>  
             <div class="mb-3">
               <label for="" class="form-label">Nacionalidad</label>
               <input type="text"
-                class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId" placeholder="Nacionalidad del profesor">
+                class="form-control" name="nacionalidad" id="nacionalidad" required aria-describedby="helpId" placeholder="Nacionalidad del profesor">
               <small id="helpId" class="form-text text-muted">Ingresa la nacionalidad del profesor</small>
             </div>       
             <div class="mb-3">

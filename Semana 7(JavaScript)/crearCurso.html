@@ -14,34 +14,72 @@
 </head>
 
 <body>
- <div class="container-fluid">
+
   <header>
     <!-- place navbar here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/home.png" style="padding-left: 15%; width: 30%; height: 30%;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item dropdown ps-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                Listas
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="listarCursos.html">Lista de Cursos</a></li>
+                <li><a class="dropdown-item" href="listaEstudiantes.html">Lista de Estudiantes</a></li>
+                <li><a class="dropdown-item" href="listaProfesores.html">Lista de Profesores</a></li>
+                <li><a class="dropdown-item" href="listaGrupos.html">Lista de Grupos</a></li>
+                
+              </ul>
+            </li>
+            <li class="nav-item dropdown ps-2">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                Agregar
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="crearCurso.html">Agregar Cursos</a></li>
+                <li><a class="dropdown-item" href="crearEstudiante.html">Agregar Estudiantes</a></li>
+                <li><a class="dropdown-item" href="crearProfesor.html">Agregar Profesores</a></li>
+                <li><a class="dropdown-item" href="crearGrupo.html">Agregar Grupos</a></li>
+                
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
   <main>
-    <td>${value.id}</td>
-    <td>${value.nombre}</td>
-    <td>${value.tiempo}</td>
-    <td>${value.usuario}</td>
-
+    
+  <div class="m-2">
     <form id="formulario">
         <div class="mb-3">
           <label for="" class="form-label">Nombre</label>
           <input type="text"
-            class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingresa el nombre del curso">
-          <small id="helpId" class="form-text text-muted">Nombre acá</small>
+            class="form-control" name="nombre" id="nombre" required aria-describedby="helpId" placeholder="Ingresa el nombre del curso">
+          <small id="helpId" class="form-text text-muted">Ingresa el nombre del curso</small>
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Descripción</label>
             <input type="text"
-              class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Ingresa la descripcion del curso">
-            <small id="helpId" class="form-text text-muted">Descripción acá</small>
+              class="form-control" name="descripcion" id="descripcion" required aria-describedby="helpId" placeholder="Ingresa la descripcion del curso">
+            <small id="helpId" class="form-text text-muted">Ingresa la descripción del curso</small>
           </div>
           <div class="mb-3">
             <label for="" class="form-label">Tiempo</label>
             <input type="text"
-              class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="Ingresa el tiempo del curso">
-            <small id="helpId" class="form-text text-muted">Tiempo acá</small>
+              class="form-control" name="tiempo" id="tiempo" required aria-describedby="helpId" placeholder="Ingresa el tiempo del curso">
+            <small id="helpId" class="form-text text-muted">Ingresa el tiempo del curso</small>
           </div>
 
           <div class="mb-3">
@@ -49,12 +87,22 @@
             <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
     </form>
+  </div>
+
+  
 
   </main>
   <footer>
     <!-- place footer here -->
   </footer>
- </div>
+
+
+  
+  
+  
+  
+  
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -64,36 +112,10 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-
-<script>
-    var formulario = document.getElementById('formulario');
-
-    formulario.addEventListener('submit', function(e){
-        alert('Salvando');
-        e.preventDefault();
-
-        var datosenviar = {
-            nombre:"Primer proyecto react",
-            descripcion:"React Junior",
-            tiempo:"10 Meses", 
-            usuario:"profesor Mario" 
-        }
-       
-    
-    console.log(datosenviar);
+  <script src="AgregarCurso.js"></script>
 
 
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
-    {
-        method: "POST",
-        body: JSON.stringify(datosenviar)
-    }
-    ).then(respuesta => respuesta.json())
-     .then((datosrespuesta) =>{
-        
-     } ).catch(console.log)
-    });
-</script>
+
 
 </body>
 
