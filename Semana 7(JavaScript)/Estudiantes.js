@@ -1,6 +1,6 @@
 //////////CONSULTAR 
 var contenidoTablaResultado = document.querySelector('#resultados');
-var contenidoSelectResultado = document.querySelector('#idCarreras')
+var contenidoSelectResultado = document.querySelector('#idCarreras');
 
   function CargarDatosEstudiantes() {
     fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaEstudiantes.php")

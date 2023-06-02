@@ -6,13 +6,9 @@ var formulario = document.getElementById('formulario');
         e.preventDefault();
 
         var nombre = document.getElementById('nombre').value;
-       
-
         var datosenviar = {
             nombre: nombre,
         }
-       
-    
     console.log(datosenviar);
 
 
@@ -24,6 +20,7 @@ var formulario = document.getElementById('formulario');
     ).then(respuesta => respuesta.json())
      .then((datosrespuesta) =>{
       alert('El grupo con el nombre '+datosenviar.nombre+' fue agregado correctamente');
+      window.location = 'listaGrupos.html'
         
      } ).catch(console.log)
     });
